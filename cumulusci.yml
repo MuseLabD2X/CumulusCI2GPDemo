@@ -1,0 +1,26 @@
+minimum_cumulusci_version: '3.64.0'
+project:
+    name: CumulusCI2GPDemo
+    package:
+        name: CumulusCI 2GP Demo
+        namespace: d2x
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/CumulusCI2GPDemo/tests
+            options:
+                outputdir: robot/CumulusCI2GPDemo/results
+
+    robot_testdoc:
+        options:
+            path: robot/CumulusCI2GPDemo/tests
+            output: robot/CumulusCI2GPDemo/doc/CumulusCI2GPDemo_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
